@@ -1,3 +1,8 @@
 stages:
   train:
     cmd: echo ${footrain} && python train.py
+metrics:
+- dvclive/metrics.json
+plots:
+- dvclive/plots/metrics:
+    x: step
