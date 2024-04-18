@@ -36,5 +36,3 @@ jobs:
           DVC_STUDIO_TOKEN: ${{ secrets.DVC_STUDIO_TOKEN }}
           DVCLIVE_LOGLEVEL: INFO
         run: dvc exp run 
-
-      - run: dvc exp push origin
