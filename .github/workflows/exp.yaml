@@ -8,9 +8,6 @@ jobs:
     name: Train custom model
     timeout-minutes: 2880
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: ./model_training
     steps:
       - uses: actions/checkout@v3
         with:
@@ -35,4 +32,5 @@ jobs:
           REPO_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
           DVC_STUDIO_TOKEN: ${{ secrets.DVC_STUDIO_TOKEN }}
           DVCLIVE_LOGLEVEL: INFO
-        run: dvc exp run 
+        run: dvc exp run model_training/dvc.yaml
+      - run: dvc exp push origin
